@@ -1,0 +1,141 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de cuotas | Finanzas SV</title>
+  </head>
+
+  <body>
+    <div id="app">
+
+      <header>
+        <p data-i18n="brand">Finanzas SV</p>
+
+        <!-- Language selector -->
+        <select
+          id="language-select"
+          aria-label="Idioma / Language"
+        >
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </header>
+
+      <main>
+        <h1 data-i18n="title">
+          Calculadora de compras a cuotas
+        </h1>
+
+        <p data-i18n="description">
+          Descubre cuánto pagarás por tus compras a cuotas sin intereses.
+        </p>
+
+        <section aria-labelledby="form-title">
+          <h2 id="form-title" data-i18n="formTitle">
+            Detalles de la compra
+          </h2>
+
+          <form id="installment-form">
+
+            <!-- Purchase price -->
+            <div>
+              <label
+                for="purchase-price"
+                data-i18n="purchasePrice"
+              >
+                Precio de compra (USD)
+              </label>
+
+              <input
+                type="number"
+                id="purchase-price"
+                name="purchasePrice"
+                min="0.01"
+                step="0.01"
+                required
+              />
+            </div>
+
+            <!-- Down payment -->
+            <div>
+              <label
+                for="down-payment"
+                data-i18n="downPayment"
+              >
+                Prima o pago inicial (USD)
+              </label>
+
+              <input
+                type="number"
+                id="down-payment"
+                name="downPayment"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+            </div>
+
+            <!-- Installments -->
+            <div>
+              <label
+                for="installments"
+                data-i18n="installments"
+              >
+                Número de cuotas
+              </label>
+
+              <input
+                type="number"
+                id="installments"
+                name="installments"
+                min="1"
+                max="36"
+                step="1"
+                required
+              />
+            </div>
+
+            <!-- Upfront fee -->
+            <div>
+              <label
+                for="upfront-fee"
+                data-i18n="upfrontFee"
+              >
+                Cargo único inicial (USD)
+              </label>
+
+              <input
+                type="number"
+                id="upfront-fee"
+                name="upfrontFee"
+                min="0"
+                step="0.01"
+                value="0"
+              />
+            </div>
+
+            <button type="submit" data-i18n="calculate">
+              Calcular
+            </button>
+
+          </form>
+        </section>
+
+        <section id="results" aria-labelledby="results-title">
+          <h2 id="results-title" data-i18n="resultsTitle">
+            Resultados
+          </h2>
+
+          <p data-i18n="placeholder">
+            Ingresa los datos de tu compra y presiona Calcular.
+          </p>
+        </section>
+
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
